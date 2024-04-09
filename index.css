@@ -77,8 +77,9 @@
 }
 
 /*COLORS*/
+/*COLORS*/
 .bg-white {
-  background-color: #f5f2f2;
+  background-color: #ecfcff;
 }
 .bg-grey {
   background-color: #6c6969c8;
@@ -87,16 +88,16 @@
   background-color: #3f3d3d00;
 }
 .bg-black {
-  color: #191919;
+  background-color: #313035;
 }
 .white {
-  color: #f5f2f2;
+  color: #ecfcff;
 }
 .black {
-  color: #191919;
+  color: #313035;
 }
-.red {
-  color: #ff0002;
+.blue {
+  color: #003bee;
 }
 
 /*LAYORS*/
@@ -151,53 +152,53 @@ body {
   font-weight: light;
 }
 
+/*SECTIONS*/
+/*SLOGAN*/
+#slogan {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  margin-bottom: 100vh;
+  overflow: hidden; /* Add this line to hide the overflow content */
+  height: 100vw;
+}
+
+.slogan {
+  font-family: "PT Sans", sans-serif;
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8.6rem;
+  line-height: 6.3rem; /* 96.429% */
+  text-transform: uppercase;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+}
+
 :focus {
-  outline: 0.2rem solid #191919;
+  outline: 0.2rem solid #313035;
   filter: blur(0px);
 }
 
 ::selection {
   background-color: #3f3d3d;
-  color:#f5f2f2;
+  color: #ecfcff;
 }
 
-span:focus, p:focus, h3:focus {
-    background-color: #3f3d3d;
-    color:#f5f2f2;
-    outline: none;
+span:focus,
+p:focus,
+h3:focus {
+  background-color: #3f3d3d;
+  color: #ecfcff;
+  outline: none;
 }
 
 div:not(.discipline):focus {
   outline: none;
 }
 
-/*LINKS*/
-a, a:visited {
-  color: #ff0002 !important;
-}
-
-a:focus {
-  background-color: #191919 !important;
-  outline: none !important;
-  border: none !important;
-}
-
-a:hover, a:visited:hover {
-  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
-  color: #ff0002;
-}
-
-a:focus, a::selection:focus {
-  background-color: #ff0002 !important;
-  color: #f5f2f2 !important;
-  outline: none !important;
-}
-
-span:focus a, span::selection:focus a {
-  color: #ff0002 !important;
-}
-
-/*FIRST PART*/
+/*SPLASH*/
 #splash-wrapper {
   display: flex;
   flex-direction: column;
@@ -206,10 +207,9 @@ span:focus a, span::selection:focus a {
   overflow-y: hidden;
 }
 
-/*SPLASH*/
 #splash {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: flex-end;
   height: 100vh;
   max-height: 100vw;
@@ -237,28 +237,8 @@ h1 {
   margin: 0;
 }
 
-/*SECOND SECTION*/
-#slogan {
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  margin-bottom: 100vh;
-  overflow: hidden; /* Add this line to hide the overflow content */
-  display: block;
-}
-
-.slogan {
-  font-family: "PT Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12rem;
-  line-height: 12rem; /* 96.429% */
-  text-transform: uppercase;
-  margin: 0;
-}
-
 /*VIDEO BACKGROUND*/
-#video-background-wrapper {
+#second-section {
   position: static;
   bottom: 0;
   left: 0;
@@ -268,11 +248,7 @@ h1 {
   transition: height 0.5s ease-out;
 }
 
-#video-background-wrapper.small-video-wrapper:hover {
-  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
-}
-
-#video-background-wrapper video {
+#second-section video {
   position: fixed;
   top: auto;
   bottom: 0;
@@ -284,73 +260,58 @@ h1 {
 }
 
 /*MAIN CONTENT SECTION*/
-#artist,
-#grey-sky-background-frame,
-#grey-sky-background {
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vw;
-}
-
 #artist {
+  width: 100vw;
+  max-height: 100vw;
   position: relative;
   overflow: visible;
-
   margin-top: 2.5vw;
+  padding: 20vw;
 }
 
 #artist {
   font-family: "Biotif";
-  font-size: 1.8rem;
-  line-height: 1.8rem;
+  font-size: 1rem;
+  line-height: 1rem;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.08rem;
   text-transform: uppercase;
 }
 
-#grey-sky-background-frame {
-  border-width: 2vw 2vw 2vw 2vw;
-  border-style: solid;
-  border-color: #f5f2f2;
-  overflow: hidden;
+#wrapper-galerien {
+  display: flex;
+  flex-direction: column;
+  gap: 10vw;
 }
 
-#grey-sky-background-frame,
-#artist-content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; /*beide children relativ zu #artist*/
-}
-
-#grey-sky-background {
-  position: absolute;
-  top: 0;
-  left: -2vw; /*due to margin*/
-
-  box-sizing: border-box;
+.galerie {
   width: 100vw;
-  opacity: 1;
-  background-attachment: local; /*moves when divs top-poisition is updated*/
-}
-
-#grey-sky-background-img {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: auto;
-  opacity: 0.6;
-}
-
-#artist-content {
-  width: 100vw;
-  margin: 2vw 0 2vw 0;
-  padding: 0 2vw 0 2vw;
-
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow-y: hidden;
   overflow-y: scroll;
-  overflow-x: visible;
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+.galerie.with-border {
+  padding: 4vw;
+}
+
+.galerie > div {
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  max-height: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.galerie img {
+  height: 85%;
+  margin: auto;
 }
 
 #wrapper {
@@ -367,49 +328,38 @@ h1 {
   padding-right: 50vw;
 }
 
-#artist-content a {
+#galerie a {
   font-family: "Biotif";
 }
 
-/*DISCIPLINES */
-/*Menu Bar styles*/
-#menuBar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  position: absolute;
-  cursor: move;
-  z-index: 99;
-  bottom: 5vw;
-  right: 4vw;
-  cursor: grab;
+/*LINKS*/
+a,
+a:visited {
+  color: #003bee !important;
 }
 
-.menu-item {
-  height: 1.5rem;
-  min-height: 1.5rem;
-  max-height: 1.5rem;
-  cursor: pointer;
+a:focus {
+  background-color: #313035 !important;
+  outline: none !important;
+  border: none !important;
 }
 
-.menu-item:not(.selected-item) {
-  width: 3rem;
-  min-width: 3rem;
-  max-width: 3rem;
-  background-color: #ff0002;
+a:hover,
+a:visited:hover {
+  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
+  color: #003bee;
 }
 
-.selected-item {
-  min-width: 1.5rem;
-  max-width: 1.5rem;
-  width: 1.5rem;
-  border-radius: 100%;
-  background-color: #191919;
-  cursor: auto;
+a:focus,
+a::selection:focus {
+  background-color: #003bee !important;
+  color: #ecfcff !important;
+  outline: none !important;
 }
 
-#menuBar:focus {
-  background-color: #3f3d3d;
+span:focus a,
+span::selection:focus a {
+  color: #003bee !important;
 }
 
 /* Disciplines Wrapper styles */
@@ -521,54 +471,6 @@ div:focus *.more-blur,
   filter: blur(0px);
 }
 
-/*audioPlayer MEER*/
-#audioPlayer {
-  margin-top: 2rem;
-}
-
-audio, audio::-webkit-media-controls-panel {
-  background-color: #f5f2f2;
-  min-width: 20rem;
-  margin: 0;
-  border-radius: 0%;
-  width: 100%;
-}
-
-/* Fortschrittsbalken */
-#audioPlayer audio::-webkit-media-controls-timeline {
-  background: #f5f2f2; /* Hintergrundfarbe des Fortschrittsbalkens */
-}
-
-/* Lautstärkeregler */
-#audioPlayer audio::-webkit-media-controls-volume-slider {
-  background: #f5f2f2; /* Hintergrundfarbe des Lautstärkereglers */
-}
-
-/* Allgemeine Anpassungen für alle Buttons im Audio-Player */
-#audioPlayer audio::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-pause-button,
-#audioPlayer audio::-webkit-media-controls-mute-button,
-#audioPlayer audio::-webkit-media-controls-volume-up-button,
-#audioPlayer audio::-webkit-media-controls-volume-down-button {
-  background-color: #f5f2f2;
-  border: none;
-  border-radius: 0.05rem; /* Abgerundete Ecken für die Buttons */
-  margin: 0 1rem; /* Abstand zwischen den Buttons */
-  border-radius: 0px;
-}
-
-/* Fokusstil für alle Buttons im Audio-Player */
-#audioPlayer audio::-webkit-media-controls-play-button:focus,
-#audioPlayer audio::-webkit-media-controls-pause-button:focus,
-#audioPlayer audio::-webkit-media-controls-mute-button:focus,
-#audioPlayer audio::-webkit-media-controls-volume-up-button:focus,
-#audioPlayer audio::-webkit-media-controls-volume-down-button:focus,
-#audioPlayer audio::-webkit-media-controls-timeline:focus,
-#audioPlayer audio::-webkit-media-controls-volume-slider:focus {
-  outline: 0.15rem solid #ff0002; /* Fokus-Randfarbe für den Fortschrittsbalken und Lautstärkeregler */
-  background-color: #f5f2f2 !important;
-}
-
 /*CURSOR*/
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
@@ -576,7 +478,8 @@ body {
 
 /*FOR RESPONSIVE*/
 @media (max-aspect-ratio: 1/1) {
-  #video-background-wrapper, video {
+  #second-section,
+  video {
     position: absolute;
     top: 100vw;
   }
@@ -588,7 +491,8 @@ body {
   }
 
   /*MAKE SLOGAN SECTION MARGER*/
-  #splash-wrapper, #splash {
+  #splash-wrapper,
+  #splash {
     height: 160vw !important;
   }
 
@@ -598,18 +502,16 @@ body {
   }
 
   /*DO NOT DISPLAY VID*/
-  #backgroundVideo, #video-background-wrapper {
+  #backgroundVideo,
+  #second-section {
     display: none !important;
   }
-
 
   #artist {
     margin-top: 0;
   }
 
-  #artist,
-  #grey-sky-background-frame
-  {
+  #artist {
     width: 100vw !important;
     height: 100vh !important;
     max-height: 100vh !important;
